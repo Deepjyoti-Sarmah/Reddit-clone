@@ -11,6 +11,11 @@ datasource db {
   relationMode = "prisma"
 }
 
+enum VoteType {
+  UP
+  DOWN
+}
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -43,10 +48,16 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
+  // createdSubreddits Subreddit[]    @relation("CreatedBy")
+  // subscriptions     Subscription[]
+  // votes             Vote[]
 
   username String? @unique
 
   image    String?
   accounts Account[]
   sessions Session[]
+  // Post        Post[]
+  // Comment     Comment[]
+  // CommentVote CommentVote[]
 }
