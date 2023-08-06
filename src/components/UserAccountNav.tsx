@@ -1,5 +1,5 @@
 import { User } from 'next-auth';
-import { DropdownMenu, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
+import { DropdownMenu, DropdownMenuTrigger } from './ui/DropdownMenu';
 import { FC } from 'react';
 import UserAvatar from './UserAvatar';
 
@@ -11,8 +11,15 @@ interface UserAccountNavProps {
 const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
     return <DropdownMenu>
         <DropdownMenuTrigger>
-            <UserAvatar user={user} />
+            <UserAvatar
+                className='h-8 w-8'
+                user={{
+                    name: user.name || null,
+                    image: user.image || null
+                }} />
         </DropdownMenuTrigger>
+
+        
     </DropdownMenu>
 }
 
