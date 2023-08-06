@@ -1,9 +1,9 @@
 "use client"
 import { User } from 'next-auth';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from './ui/DropdownMenu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuItem, DropdownMenuSeparator } from './ui/DropdownMenu';
 import { FC } from 'react';
 import UserAvatar from './UserAvatar';
-import { DropdownMenuItem, DropdownMenuSeparator } from '@radix-ui/react-dropdown-menu';
+import { } from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 
